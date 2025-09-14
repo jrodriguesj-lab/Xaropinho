@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-TOKEN = "OTEyOTA2NTU1NTA5MzQyMjI4.G90592.IxUlJ32zc2zuvMmjWxFklim8L80R0b4EPVK3U8"  # coloque o token do seu bot
+TOKEN = os.environ.get("TOKEN")
 AUDIO_FOLDER = "audios"   # pasta onde estão os MP3
 
 intents = discord.Intents.all()
@@ -82,3 +82,4 @@ async def on_message(message):
     await bot.process_commands(message)
 
 bot.run(TOKEN)
+
